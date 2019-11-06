@@ -3,4 +3,4 @@ project(shell)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(shell shell.c)
+add_executable(shell main.c)

@@ -2,7 +2,7 @@ FROM shell AS previous
 
 WORKDIR /src
 
-COPY CMakeLists.txt main.cpp ./
+COPY CMakeLists.txt main.c ./
 
 RUN cmake . && make
 
