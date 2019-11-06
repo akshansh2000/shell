@@ -1,3 +1,13 @@
+FROM shell AS previous
+
+WORKDIR /src
+
+COPY CMakeLists.txt main.cpp ./
+
+RUN cmake . && make
+
 FROM ubuntu:bionic
 
-RUN apt update && apt install -y gcc cmake
+COPY --from=previous /src/shell ./
+
+CMD ["./shell"]
